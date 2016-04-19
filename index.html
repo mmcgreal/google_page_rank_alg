@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Google Page Rank Algorithm</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+   <link rel="shortcut icon" type="image/x-icon" href="logo.ico" />`
+</head>
+<body>
+
+<div class="container">
+  <h2>Google Page Rank Algorithm</h2>
+  <ul class="nav nav-pills">
+    <li class="active"><a data-toggle="pill" href="#home">Home</a></li>
+    <li><a data-toggle="pill" href="#menu1">History</a></li>
+    <li><a data-toggle="pill" href="#menu2">Algorithm Description</a></li>
+    <li><a data-toggle="pill" href="#menu3">Algorithm </a></li>
+    <li><a data-toggle="pill" href="#menu4">Variations</a></li>
+  </ul>
+
+  <div class="tab-content">
+    <div id="home" class="tab-pane fade in active">
+      <h3>Home</h3>
+      <p>Algorithm used by Google to rank the pages across the WWW by popularity. <br>
+          - Called a link analysis algorithm <br><br>
+         The rank value of  a page gives the overall popularity of that page<br>
+          - Determined by how many times that page is referenced, as a hyperlink, in other webpages <br><br>
+         The algorithm is defined recursively <br>
+          - A page with a high page rank that hyperlinks another page will cause that page’s rank to go up by a higher amount
+      </p>
+      <img src="bubbles.png" alt="bubbleChart" style="width:500px;height:400px">
+    </div>
+
+    <div id="menu1" class="tab-pane fade">
+      <h3>History</h3>
+      <p>PageRank was developed by Larry Page and Sergey Brin in 1996 at Stanford University <br>
+          - Came from a research project to develop a new search engine <br><br>
+          After the paper on the project was published in 1998, Page and Brin founded Google Inc <br><br>
+          The PageRank process is patented, but to the University, not Google Inc. The University received 1.8 million shares in exchange for Google using the patent, and sold the shares in 2005 for $336 million.
+      </p>
+    </div>
+
+    <div id="menu2" class="tab-pane fade">
+      <h3>Algorithm Description</h3>
+      <p>Google’s PageRank algorithm outputs a probability distribution used to represent the likelihood that a person randomly clicking on links will arrive at any particular page <br><br>
+          Can be calculated for any size of documents <br><br>
+          Computations undergo multiple iterations (“passes”) in order to adjust the approximate PageRank values closer to the theoretical true ones <br><br>
+          Probability is a value between 0 and 1.  A PageRank of 0.5 means there’s a 50% chance that a person clicking on a random link will be directed to the document. <br><br>
+          Calculated recursively by the PageRanks of pages that link to this page <br><br>
+          Determined by how many other pages reference this one and by how many outbound links the page contains <br><br>
+          Done by individual pages, not entire websites
+      </p>
+      <img src="pie.png" alt="pieChart" style="width:400px;height:400px">
+
+    </div>
+
+    <div id="menu3" class="tab-pane fade">
+      <h3>Algorithm </h3>
+      <p><font size = 6> PR(A) = (1-d) + d(PR(T1)/C(T1) + … + PR(Tn)/C(Tn))</font><br><br>
+          <font size=4> PR(A) is the PageRank of Page A </font><br>
+          <font size=4> d is a dampening factor between 0 and 1 </font><br>
+          <font size=4> PR(Ti) is the PageRank value of pages Ti which link to Page A </font><br>
+          <font size=4> C(Ti) is the number of outbound links on Page Ti </font><br><br>
+          Notes:<br>
+          Multiple outbound links to a single page are ignored; this is only counted as one outbound link <br>
+          The more outbound links on Page Ti decrease its influence on Page A’s PageRank <br>
+          The dampening factor is the probability that a person will stop clicking (it reduces the influence of outbound links to Page A). <br>
+          The dampening factor is sually set at 0.85. The more outbound links on Page Ti decrease its influence on Page A’s PageRank.
+      </p>
+      <img src="algo.png" alt="algorithm" style="width:500;height:250px"><br>
+
+    </div>
+
+    <div id="menu4" class="tab-pane fade">
+      <h3>Variations</h3>
+      <p>SERP (Search Engine Results Page) <br>
+         - The actual result (the links) given when prompted by a search query <br>
+         - Uses the PageRank algorithm, along with 200 more factors to determine a page’s final value <br>
+         - Differs from PageRank because it measures both “authority and popularity,” aka relevance and reputation. PageRank is simply a measure of a page’s reputation <br><br>
+         The Intentional Surfer Model <br>
+         - Reflects the importance of a particular page as a function of how many actual visits it receives by real users (PageRank is considered random surfer model)
+      </p>
+      <img src="serp.png" alt="SERP" style="width:304px;height:304px">
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
